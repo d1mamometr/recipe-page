@@ -1,0 +1,163 @@
+*, *::before, *::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img
+{
+    display: block;
+    max-width: 100%;
+}
+:root
+{
+    --font-secondary: 'Young Serif', serif;
+    --font-base: 'Outfit', sans-serif;
+    --White: hsl(0, 0%, 100%);
+    --Stone_100: hsl(30, 54%, 90%);
+    --Stone_150: hsl(30, 18%, 87%);
+    --Stone_600: hsl(30, 10%, 34%);
+    --Stone_900: hsl(24, 5%, 18%);
+    --Brown_800: hsl(14, 45%, 36%);
+    --Rose_800: hsl(332, 51%, 32%);
+    --Rose_50: hsl(330, 100%, 98%);
+}
+section
+{
+    padding: 1.5rem 0;
+}
+.card
+{
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 0;
+    background-color: var(--White);
+}
+.card__content
+{
+    padding-inline: 2rem;
+}
+body
+{
+    min-height: 100vh;
+    font-family: var(--font-base);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--Stone_600);
+}
+ul, ol
+{
+    list-style: none;
+    padding-left: 0;
+}
+ol
+{
+    counter-reset: item;
+}
+li
+{
+    position: relative;
+    padding-left: 2rem;
+}
+ul li::before
+{
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--Brown_800)
+}
+ol li::before
+{
+    counter-increment: item;
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    color: var(--Brown_800);
+    font-weight: 700;
+}
+
+
+h1,h3
+{
+    font-family: var(--font-secondary);
+}
+h1
+{
+    font-size: clamp(1.5em, 7vw, 4rem);
+    color: var(--Stone_900);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+h3
+{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--Brown_800);
+    font-weight: 600;
+}
+
+hr
+{
+    border: none;
+    height: 1px;
+    background-color: var(--Stone_150);
+    margin-block: 1.5rem;
+}
+
+
+.preparation
+{
+    border-radius: 0.75rem;
+    background-color: var(--Rose_50);
+    padding: 1.6rem;
+}
+.preparation__title, .preparation li::before
+{
+    color: var(--Rose_800)
+}
+.preparation__item strong
+{
+    font-weight: 600;
+}
+
+
+.nutrition__row
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid var(--Stone_150);
+}
+.nutrition__row:last-child
+{
+    border-bottom: none;
+}
+.nutrition dd
+{
+    font-weight: 600;
+    color: var(--Brown_800);
+}
+
+@media (min-width: 48rem)
+{
+    body
+    {
+        background-color: var(--Stone_100);
+    }
+    .card
+    {
+        max-width: 46rem;
+        margin-block: 7.5rem;
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+    }
+    .card__content
+    {
+        padding-inline: 0;
+    }
+    .header img
+    {
+        border-radius: 0.75rem;
+    }
+}
